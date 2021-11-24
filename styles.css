@@ -66,6 +66,7 @@ body {
 .ratings__item ul {
   display: flex;
   list-style: none;
+  padding: 0;
 }
 .ratings__item ul li {
   margin-right: 0.625rem;
