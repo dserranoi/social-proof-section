@@ -1,0 +1,139 @@
+/* colors */
+//primary
+$veryDarkMagenta-color: hsl(300, 43%, 22%);
+$softPink-color: hsl(333, 80%, 67%);
+//Neutral
+$darkGrayishMagenta-color: hsl(303, 10%, 53%);
+$lightGrayishMagenta-color: hsl(300, 24%, 96%);
+$white-color: hsl(0, 0%, 100%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Spartan", sans-serif;
+}
+
+:root {
+  font-size: 16px;
+  font-family: "Spartan", sans-serif;
+}
+
+body {
+  background-image: url("./images/bg-pattern-top-mobile.svg"),
+    url("./images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: left top, right bottom;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.description {
+  margin: 5rem 1.5rem 0rem 1.5rem;
+  h1 {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 2rem;
+    color: $veryDarkMagenta-color;
+    text-align: center;
+    letter-spacing: -1.14286px;
+  }
+  p {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem;
+    text-align: center;
+    letter-spacing: -0.5px;
+    color: $darkGrayishMagenta-color;
+    margin-top: 1rem;
+  }
+}
+.ratings {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+}
+.ratings__item {
+  background-color: $lightGrayishMagenta-color;
+  border-radius: 0.5rem;
+  width: 20rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ul {
+    display: flex;
+    list-style: none;
+    li {
+      margin-right: 0.625rem;
+    }
+  }
+  p {
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 1rem;
+    margin-top: 0.5rem;
+    color: $veryDarkMagenta-color;
+  }
+}
+
+.reviews {
+margin-bottom: 6rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+}
+.reviews__card {
+  background-color: $veryDarkMagenta-color;
+  width: 20rem;
+  border-radius: 0.5rem;
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+.reviews__card-header {
+  display: flex;
+}
+.reviews__card-header-img {
+  img {
+    width: 2.5rem;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+}
+.reviews__card-header-name {
+  margin-left: 0.5rem;
+  & p:nth-child(1) {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.8125rem;
+    line-height: 1.375rem;
+    color: $white-color;
+  }
+  & p:nth-child(2) {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.8125rem;
+    line-height: 1.375rem;
+    color: $softPink-color;
+  }
+}
+.reviews__card-content {
+    margin-top: 1.5rem;
+  p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    line-height: 1.375rem;
+    letter-spacing: -0.232143px;
+    color: $white-color;
+  }
+}
