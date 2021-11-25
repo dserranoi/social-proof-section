@@ -7,6 +7,27 @@ $darkGrayishMagenta-color: hsl(303, 10%, 53%);
 $lightGrayishMagenta-color: hsl(300, 24%, 96%);
 $white-color: hsl(0, 0%, 100%);
 
+//screen sizes
+$screen-md-min:768px;
+$screen-lg-min:962px;
+$screen-xl-min:1200px;
+
+@mixin md{
+  @media (min-width: #{$screen-md-min}){
+    @content;
+  }
+}
+@mixin lg{
+  @media (min-width: #{$screen-lg-min}){
+    @content;
+  }
+}
+@mixin xl{
+  @media (min-width: #{$screen-xl-min}){
+    @content;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,7 +51,10 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
+  margin: 0 4rem;
+  justify-content: center;
 }
+
 
 .description {
   margin: 5rem 1.5rem 0rem 1.5rem;
@@ -87,7 +111,7 @@ body {
 }
 
 .reviews {
-margin-bottom: 6rem;
+  margin-bottom: 6rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -138,3 +162,136 @@ margin-bottom: 6rem;
     color: $white-color;
   }
 }
+
+  @include md{
+    .description{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h1,p{
+        width: 27rem;
+      }
+      // margin: unset;
+    }
+  }
+
+  @include lg{
+    body{
+      background-image: url("./images/bg-pattern-top-desktop.svg"),
+        url("./images/bg-pattern-bottom-desktop.svg");
+      background-repeat: no-repeat;
+      background-position: left top, right bottom;
+      background-size: contain contain;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .description {
+      margin: unset;
+      width: 27rem;
+      h1 {
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 3rem;
+        color: $veryDarkMagenta-color;
+        text-align: left;
+        letter-spacing: -1.14286px;
+      }
+      p {
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5rem;
+        text-align: left;
+        letter-spacing: -0.5px;
+        color: $darkGrayishMagenta-color;
+        margin-top: 1rem;
+      }
+    }
+    .container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .ratings{
+      display: grid;
+      grid-template-columns: 3rem 3rem 15rem 3rem 3rem ;
+      grid-template-rows: repeat(3,1fr);
+      gap: .5rem;
+      width: 32rem;
+      justify-items: unset;
+    }
+    .ratings__item.ratings-a{
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+    .ratings__item.ratings-b{
+      grid-column-start: 2;
+      grid-column-end: 5;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .ratings__item.ratings-c{
+      grid-column-start: 3;
+      grid-column-end: 6;
+      grid-row-start: 3;
+      grid-row-end: last-line;
+    }
+
+
+    .ratings__item{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      height: 3rem;
+      p{
+        margin-top: unset;
+      }
+    }
+
+    .reviews {
+      // margin-bottom: 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: .5rem .5rem 15rem;
+      grid-column: 1/3;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      margin-right: 1rem;
+    }
+    .reviews__card{
+      background-color: $veryDarkMagenta-color;
+      width: 21.3rem;
+      height: 15rem;
+      border-radius: 0.5rem;
+      padding: 2rem 2rem 2rem 2rem;
+    }
+    .reviews__card.reviews-a{
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+    .reviews__card.reviews-b{
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .reviews__card.reviews-c{
+      grid-column-start: 3;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 3;
+    }
+  }
+
